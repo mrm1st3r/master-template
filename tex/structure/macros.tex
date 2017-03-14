@@ -1,0 +1,95 @@
+%-------------------------------------------------------------
+% Structure
+%-------------------------------------------------------------
+
+% Reset Page and Section numbers
+\newcommand{\setNumbers}[2]{
+	\renewcommand{\thesection}{#2{chapter}.#2{section}}
+	\renewcommand{\theHsection}{#2{chapter}.#2{section}}
+	\setcounter{chapter}{0}
+	\setcounter{section}{0}
+	\pagenumbering{#1}
+	\setcounter{page}{1}
+}
+
+
+%-------------------------------------------------------------
+% Quotes
+%-------------------------------------------------------------
+
+% A direct quote
+% @par1: The quoted text
+% @par2: The source where the text is from
+% @par3: The page where the text is from
+\newcommand*{\QuoteDirect}[3]{\QuoteM{\emph{#1}} \cite[#3]{#2}}
+
+% A direct quote without page
+% @par1: The quoted text
+% @par2: The source where the text is from
+\newcommand*{\QuoteDirectNoPage}[2]{\QuoteM{\emph{#1}} \cite{#2}}
+
+% A indirect quote
+% @par1: The source where the text is from
+% @par2: The page where the text is from
+\newcommand*{\QuoteIndirect}[2]{(vgl. \cite[#2]{#1})}
+
+% A indirect quote without page
+% @par1: The source where the text is from
+\newcommand*{\QuoteIndirectNoPage}[1]{(vgl. \cite{#1})}
+
+% A text with quotation marks
+% @par1: The text you want to quote
+% »text«
+\newcommand*{\QuoteM}[1]{\frqq #1\flqq}
+
+% A text with single quotation marks
+% @par1: The text you want to quote
+% ›text‹
+\newcommand*{\QuoteMs}[1]{\frq #1\flq}
+
+% To adjust some words to the flow
+% @par1: the adjusted words
+% [text]
+\newcommand*{\AdjustWords}[1]{{\normalfont[#1]}}
+
+% Displays a reference to the given object
+% @par1: the lable of the thing you want to see
+% (Siehe auch Abbildung 1.1 »Ein Bild« auf Seite 4)
+\newcommand*{\SeeS}[1]
+{(siehe \autoref{#1} \QuoteM{\nameref{#1}})}
+
+% Displays a reference to the given object
+% @par1: the lable of the thing you want to see
+% (Siehe auch Abbildung 1.1 »Ein Bild« auf Seite 4)
+\newcommand*{\SeeB}[1]
+{(Siehe auch \autoref{#1} \QuoteM{\nameref{#1}} auf \autopageref{#1})}
+
+% Displays a reference to an equation
+% @par1: the lable of the equation you want to see
+% (Siehe auch Gleichung 1.1 in »Dummy Section« auf Seite 5)
+\newcommand*{\SeeEq}[1]
+{(siehe auch \autoref{#1} in \QuoteM{\nameref{#1}} auf \autopageref{#1})}
+
+% The symbol for a elision
+% Is used for more than missings one word or a sentence
+% [...]
+\newcommand*{\Elision}{{\normalfont[\dots]}}
+
+% The symbol for a small elision
+% Is used for only one missing word
+% [..]
+\newcommand*{\ElisionSmall}{{\normalfont[..]}}
+
+% This is used if a book is cited at whole
+% passim means something like continuous
+% text (vgl. [Aut99, passim]).
+\newcommand*{\passim}{passim}
+
+% To show the audience that there is something
+% To display a wrong/importen part but not corrected in the quote
+% text error [sic!] text
+\newcommand*{\SIC}{{\normalfont[sic!]}}
+
+% The text for a note from the author
+% text, Anm. d. Autors
+\newcommand*{\NoteFromAuthor}{{\normalfont\unskip , Anm. d. Autors}}

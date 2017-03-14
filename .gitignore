@@ -1,0 +1,14 @@
+## TEX
+*.aux
+*.idx
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.lol
+*.lof
+*.lot
+*.mps

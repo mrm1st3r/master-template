@@ -1,0 +1,139 @@
+% --------------------------------------------------------
+% Packages
+% --------------------------------------------------------
+
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+% Fix warning about table of listing
+\usepackage{scrhack}
+% Modern fonts
+\usepackage{lmodern}   
+% Better options for including graphics
+\usepackage{graphicx}
+% Settings Page head and foot (replacement for fancyhdr)
+\usepackage{scrlayer-scrpage}
+% Typearea (used for titlepage)
+\usepackage{geometry}
+% Line Spacing
+\usepackage{setspace}
+% Table of acronyms
+\usepackage[printonlyused]{acronym}
+% More types of lists / itemizations
+\usepackage{paralist}
+% Create hyperlinks
+\usepackage[pdfpagelabels=true]{hyperref}
+% Use all the colors
+\usepackage{color}
+% Code Listings
+\usepackage{listings}
+% Lorem Ipsum
+\usepackage{lipsum}
+\usepackage{microtype}
+
+
+% --------------------------------------------------------
+% Colors
+% --------------------------------------------------------
+
+\definecolor{listinggray}{gray}{0.98}
+\definecolor{gray}{gray}{0.9}
+
+% --------------------------------------------------------
+% Page style
+% --------------------------------------------------------
+
+\KOMAoptions{
+	paper=a4,
+	fontsize=12pt,				% 12pt Schriftgröße
+	bibliography=totoc,			% Bibliographie im Inhaltsverzeichnis
+	listof=totoc,				% Verzeichnisse im Inhaltsverzeichnis
+	parskip=full,				% Leerzeile zwischen Absätzen
+	twoside,					% Doppelseitiges Layout
+	listof=leveldown,			% Verzeichnisse als sections ausgeben
+	headings=standardclasses,	% Überschrifen mit Serifen anzeigen
+	headsepline=0.4pt,			% Dünne Linie am Seitenkopf
+	footsepline=0.4pt,			% Dünne Linie am Seitenfuß
+	plainfootsepline,			% Fußlinie auch bei Kapitelstart
+	automark					% Lebendiger Seitenkopf
+}
+
+\onehalfspacing
+
+\pagestyle{scrheadings}
+\setkomafont{headsepline}{\color{gray}}
+\setkomafont{footsepline}{\color{gray}}
+\ModifyLayer[addvoffset=-1ex]{scrheadings.foot.above.line}
+\ModifyLayer[addvoffset=-1ex]{plain.scrheadings.foot.above.line}
+
+
+% --------------------------------------------------------
+% Pdf Metadata
+% --------------------------------------------------------
+
+\hypersetup{unicode=true,
+	pdftoolbar=true,
+	pdfmenubar=true,
+	pdffitwindow=false,
+	pdfstartview={FitH},
+	pdfpagelayout={TwoColumnLeft},
+	pdftitle={\showtitle},
+	pdfauthor={\showauthor},
+	pdfsubject={\showsubject},
+	pdfkeywords={Masterarbeit},
+	pdfnewwindow=true,
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=black,
+	filecolor=magenta,
+	urlcolor=black
+}
+\pdfinfo{/CreationDate (D:20170303133742)}
+
+
+% --------------------------------------------------------
+% Listing Settings
+% --------------------------------------------------------
+\renewcommand{\lstlistlistingname}{Listingverzeichnis}
+
+\lstset{
+	captionpos=b,
+	breaklines=true,
+	showstringspaces=false,
+	tabsize=2,
+	frame=lines,
+	rulecolor=\color{gray},
+	numbers=left,
+	numberstyle=\tiny,
+	basicstyle=\footnotesize\ttfamily\mdseries,
+	keywordstyle=\bfseries\color{blue},
+	emphstyle=\color{red},
+	identifierstyle=\ttfamily,
+	commentstyle=\bfseries\color{gray}\textsl,
+	stringstyle=\color{magenta}\upshape,
+	inputencoding=utf8,
+	showspaces=false,
+	showstringspaces=false,
+	numbers=left,
+	breaklines=true,
+	backgroundcolor=\color{listinggray}
+}
+
+\lstnewenvironment{java}[2]{
+	\lstset{
+		language=Java,
+		% Label and Caption are passed as arguments
+		caption={#1},
+		label={#2}
+	}
+	\vspace*{1em}
+}{}
+
+\lstnewenvironment{xml}[2]{
+	\lstset{
+		language=XML,
+		% Label and Caption are passed as arguments
+		caption={#1},
+		label={#2}
+	}
+	\vspace*{1em}
+}{}

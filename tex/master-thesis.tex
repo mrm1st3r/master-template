@@ -1,0 +1,85 @@
+\documentclass{scrreprt}
+\usepackage[utf8]{inputenc}
+
+% ----------------------------------------------------------------
+% Title Details
+% ----------------------------------------------------------------
+
+\def\showtitle{Master Thesis}
+\def\showauthor{Max Mustermann}
+\def\showsubject{Masterarbeit}
+\def\showtutor{Dr. Acula}
+\def\showinstitute{FH Bielefeld, University of Applied Sciences}
+\def\showdepartment{Campus Minden}
+
+\input{structure/settings.tex}
+\input{structure/macros.tex}
+
+\begin{document}
+
+% ---------------------------------------------------------------------------
+% Opening
+% ---------------------------------------------------------------------------
+
+% disable page anchors for opening
+\hypersetup{pageanchor=false}
+
+\input{structure/titlepage.tex}
+\cleardoublepage
+
+\input{structure/affirmation.tex}
+\cleardoublepage
+
+\input{structure/abstract.tex}
+\cleardoublepage
+
+\hypersetup{pageanchor=true}
+
+% ---------------------------------------------------------------------------
+% Indexes
+% ---------------------------------------------------------------------------
+
+\setNumbers{Roman}{\Roman}
+
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\addchap{Verzeichnisse}
+\listoffigures
+\listoftables
+\lstlistoflistings
+\input{structure/acro.tex}
+
+\cleardoubleevenpage
+\cleardoublepage
+
+% ---------------------------------------------------------------------------
+% Content
+% ---------------------------------------------------------------------------
+
+% arabic chapter- and pagenumbers
+\setNumbers{arabic}{\arabic}
+
+\input{content/einleitung.tex}
+\cleardoublepage
+
+\input{content/grundlagen.tex}
+\cleardoublepage
+
+\input{content/schluss.tex}
+\cleardoublepage
+
+% ---------------------------------------------------------------------------
+% Literature
+% ---------------------------------------------------------------------------
+\bibliographystyle{alphadin}
+\bibliography{bibo.bib}
+\cleardoublepage
+
+% ---------------------------------------------------------------------------
+% Appendix
+% ---------------------------------------------------------------------------
+\setNumbers{roman}{\roman}
+\ohead{Anhang}
+\input{structure/appendix.tex}
+
+\end{document}
