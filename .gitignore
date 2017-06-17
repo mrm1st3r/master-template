@@ -12,6 +12,8 @@
 *.lof
 *.lot
 *.mps
+*.fls
+*.fdb_latexmk
 
 # PlantUML
 tex/assets/uml/*.svg

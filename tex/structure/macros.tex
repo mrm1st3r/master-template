@@ -12,6 +12,29 @@
 	\setcounter{page}{1}
 }
 
+%-------------------------------------------------------------
+% Figures
+%-------------------------------------------------------------
+
+\newcommand{\fig}[3]{
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics{#1}
+		\captionof{figure}{#3}
+		\label{fig:#2}
+	\end{minipage}
+	\vspace{1em}
+}
+
+\newcommand{\uml}[3]{
+	\begin{minipage}{\linewidth}
+		\centering
+		\includesvg{#1}
+		\captionof{figure}{#3}
+		\label{fig:#2}
+	\end{minipage}
+	\vspace{1em}
+}
 
 %-------------------------------------------------------------
 % Quotes
