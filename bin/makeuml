@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UML_PATH="tex/assets/uml"
+UML_PATH="assets/uml"
 
 # Generate SVG vector graphics from text description
 for file in $(find ${UML_PATH} -name "*.txt"); do
