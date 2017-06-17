@@ -1,16 +1,3 @@
-master-template
-===
-
-This is the LaTeX template I created for my master thesis.
-
-Credits
----
-
-This template is in parts based on [another template](https://bitbucket.org/mflender/abschlussarbeitsvorlage) by Malte Flender. Specifically the title page and quoting macros.
-
-License
----
-
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -35,3 +22,4 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org>
+
