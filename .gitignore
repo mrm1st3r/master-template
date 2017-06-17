@@ -12,3 +12,7 @@
 *.lof
 *.lot
 *.mps
+
+# PlantUML
+tex/assets/uml/*.svg
+tex/assets/uml/*.pdf_tex
