@@ -2,11 +2,40 @@ master-template
 ===
 
 This is the LaTeX template I created for my master thesis.
+A preview document containing examples for it's features
+is located under [master-thesis.pdf]()
+
+Features
+---
+Some of the details and features provided by this template:
+* KOMAScript class (scrartcl)
+* Double sided layout
+* living headers
+* code formatting
+* UML diagrams
+    * textual description ([PlantUML](http://plantuml.com))
+    * vector graphics
+    * same font as in document
+* Makefile
+
+Usage
+---
+For all features, there are examples provided in the document
+to show their usage.
+
+To compile the document via terminal, type:
+
+    make pdf
+
+To include generating the UML diagrams into an IDE
+(such as TeXStudio) include ``bin/makeuml`` before
+actually compiling the TeX document.
 
 Credits
 ---
 
-This template is in parts based on [another template](https://bitbucket.org/mflender/abschlussarbeitsvorlage) by Malte Flender. Specifically the title page and quoting macros.
+This template is in parts based on [another template](https://bitbucket.org/mflender/abschlussarbeitsvorlage)
+by Malte Flender. Specifically the title page and quoting macros.
 
 License
 ---
