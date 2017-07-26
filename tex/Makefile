@@ -1,5 +1,5 @@
 latex = pdflatex -shell-escape -interaction=nonstopmode > /dev/null
-file = master-thesis
+file = thesis
 
 pdf: uml plot
 	latexmk -pdf -pdflatex="$(latex)" -use-make $(file).tex
