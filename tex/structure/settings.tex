@@ -7,7 +7,7 @@
 % Fix warning about table of listing
 \usepackage{scrhack}
 % Modern fonts
-\usepackage{lmodern}   
+\usepackage{lmodern}
 % Better options for including graphics
 \usepackage{graphicx}
 % Settings Page head and foot (replacement for fancyhdr)
@@ -29,9 +29,8 @@
 % Lorem Ipsum
 \usepackage{lipsum}
 \usepackage{microtype}
-
+% Include svg graphics (needed for PlantUML)
 \usepackage{svg}
-
 \setsvg{svgpath=./assets/uml/}
 
 % --------------------------------------------------------
@@ -50,7 +49,7 @@
 	fontsize=12pt,				% 12pt Schriftgröße
 	bibliography=totoc,			% Bibliographie im Inhaltsverzeichnis
 	listof=totoc,				% Verzeichnisse im Inhaltsverzeichnis
-	parskip=full,				% Leerzeile zwischen Absätzen
+	parskip=false,				% Keine Abstände zwischen Absätzen
 	twoside,					% Doppelseitiges Layout
 	listof=leveldown,			% Verzeichnisse als sections ausgeben
 	headings=standardclasses,	% Überschrifen mit Serifen anzeigen
@@ -111,14 +110,16 @@
 	keywordstyle=\bfseries\color{blue},
 	emphstyle=\color{red},
 	identifierstyle=\ttfamily,
-	commentstyle=\bfseries\color{gray}\textsl,
+	commentstyle=\bfseries\color{darkgray}\textsl,
 	stringstyle=\color{magenta}\upshape,
 	inputencoding=utf8,
 	showspaces=false,
 	showstringspaces=false,
 	numbers=left,
 	breaklines=true,
-	backgroundcolor=\color{listinggray}
+	backgroundcolor=\color{listinggray},
+  extendedchars=true,
+  literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
 }
 
 \lstnewenvironment{java}[2]{
@@ -126,7 +127,7 @@
 		language=Java,
 		% Label and Caption are passed as arguments
 		caption={#1},
-		label={#2}
+		label={lst:#2}
 	}
 	\vspace*{1em}
 }{}
@@ -136,7 +137,18 @@
 		language=XML,
 		% Label and Caption are passed as arguments
 		caption={#1},
-		label={#2}
+		label={lst:#2}
+	}
+	\vspace*{1em}
+}{}
+
+\lstnewenvironment{plain}[2]{
+	\lstset{
+		% doesn't highlight any plaintext
+		language=tex,
+		% Label and Caption are passed as arguments
+		caption={#1},
+		label={lst:#2}
 	}
 	\vspace*{1em}
 }{}
